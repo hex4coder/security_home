@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1095706225031",
+    "project_id": "smart-security-home-b6fd3",
+    "storage_bucket": "smart-security-home-b6fd3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1095706225031:android:9851f6b8ed233f611ccb22",
+        "android_client_info": {
+          "package_name": "org.ua4ever.security_home"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1095706225031-9n3s2v9kff0t1oh8eahhi7qiltlhrpnp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.ua4ever.security_home",
+            "certificate_hash": "a8801c6d2e8f8a55fa6c2272626273882f054408"
+          }
+        },
+        {
+          "client_id": "1095706225031-070mbtjq770jitv3p32fep918mqmd695.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOhAqAlOdZNRYQjUR3yAgk0CPFICmySSM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1095706225031-070mbtjq770jitv3p32fep918mqmd695.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
