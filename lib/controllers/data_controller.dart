@@ -172,6 +172,11 @@ class DataController extends GetxController {
     });
   }
 
+  /// fungsi untuk menghapus semua data pada controller
+  Future<void> deleteAllData() async {
+    await dbRef.remove();
+  }
+
   /// fungsi mendapatkan tanggal dari string
   String getWaktu(String ntpString, {bool isTanggal = true}) {
     final listBulan = [

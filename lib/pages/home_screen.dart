@@ -104,6 +104,17 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
+      floatingActionButton: Obx(
+        () => dataController.$listData.length < 1
+            ? null
+            : FloatingActionButton(
+                onPressed: () async {
+                  await dataController.deleteAllData();
+                },
+                child: Icon(Icons.delete_forever),
+                tooltip: 'Hapus Semua data',
+              ),
+      ),
     );
   }
 
