@@ -57,13 +57,13 @@ class DataController extends GetxController {
       List<HistoryModel> listHistoryModel =
           getListHistoryFromSnapshot(event.snapshot);
 
-      // if (!$isFirst.value && listHistoryModel.length > 0) {
-      //   // sudah bukan yang pertama lagi dan masih ada data, lakukan pengecekan untuk notifikasi
-      //   await parseHistoryDataForNotif(listHistoryModel);
-      // }
+      if (!$isFirst.value && listHistoryModel.length > 0) {
+        // sudah bukan yang pertama lagi dan masih ada data, lakukan pengecekan untuk notifikasi
+        await parseHistoryDataForNotif(listHistoryModel);
+      }
 
       $listData.assignAll(listHistoryModel);
-      // $isFirst.value = false;
+      $isFirst.value = false;
       $isLoading.value = false;
     });
   }
@@ -174,7 +174,11 @@ class DataController extends GetxController {
 
   /// fungsi untuk menghapus semua data pada controller
   Future<void> deleteAllData() async {
+    $isLoading.value = true;
     await dbRef.remove();
+    $isLoading.value = false;
+    $listData.assignAll([]);
+    $listData.value = [];
   }
 
   /// fungsi mendapatkan tanggal dari string
@@ -199,7 +203,7 @@ class DataController extends GetxController {
     final tanggal = arData[0];
     final arTanggal = tanggal.split('-');
     final thn = arTanggal[0];
-    final bln = listBulan[int.parse(arTanggal[1])];
+    final bln = listBulan[int.parse(arTanggal[1]) - 1];
     final tgl = arTanggal[2];
     final jam = arData[1];
 

@@ -22,7 +22,7 @@ class FadeAnimator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _tween = TimelineTween<AniProps>()
-      ..addScene(begin: 0.seconds, duration: 1.seconds)
+      ..addScene(begin: 0.seconds, duration: 0.5.seconds)
           .animate(AniProps.y,
               tween: (reverse ? 0.0 : -30.0).tweenTo(reverse ? -30 : 0.0),
               curve: Curves.easeInOutSine)
@@ -30,7 +30,7 @@ class FadeAnimator extends StatelessWidget {
               tween: (reverse ? 1.0 : 0.0).tweenTo(reverse ? 0.0 : 1.0));
 
     return PlayAnimation<TimelineValue<AniProps>>(
-      delay: Duration(milliseconds: (500 * delay).round()),
+      delay: Duration(milliseconds: (50 * delay).round()),
       duration: _tween.duration,
       tween: _tween,
       child: child,
